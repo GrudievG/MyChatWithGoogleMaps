@@ -1,0 +1,24 @@
+{
+  "name": "google-chat",
+  "description": "Chat rooms with Google Maps API",
+  "main": "index.js",
+  "authors": [
+    "GG"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angularjs-geolocation": "^0.1.1",
+    "angular-cookies": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}

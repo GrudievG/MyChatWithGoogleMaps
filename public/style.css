@@ -1,0 +1,27 @@
+#chatWrap {
+	height: 600px;
+	overflow: auto;
+}
+
+body {
+	background-image: url(img/background.jpg);
+}
+
+.chatroom {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 8px;
+}
+
+.ll {
+	margin-bottom: 15px;
+}
+
+.login-form {
+	background-color: rgba(255, 255, 255, 0.6);
+	margin-top: 300px;
+	border-radius: 8px;
+}
+
+.form-group button {
+	width:100px;
+}

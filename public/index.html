@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>Google and Sockets app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC97Dhgp_x4DSWuzSVYJzBlcTq4vhBrB_g"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/socketFactory.js"></script>
+    <script src="js/chatCtrl.js"></script>
+    <script src="js/mapCtrl.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/loginCtrl.js"></script>
+
+  </head>
+  <body>
+  <div ng-view></div>
+  </body>
+</html>
