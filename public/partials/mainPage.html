@@ -1,24 +1,86 @@
 <div class="container">
-    <h2>Real-time App with Google Maps</h2>
-    <div class="row">
-      <div class="col-md-7" ng-controller="mapCtrl">
-        <div id="map" style="width:645px; height: 645px;"></div>
-      </div>
-      <div class="col-md-5 chatroom" ng-controller="chatCtrl">
-        <div id="chatWrap">
-          <p ng-repeat="msg in msgs track by $index">
-            <span ng-if="msg.text">
-              <strong>{{msg.name}} :</strong>
-              {{msg.text}}
-            </span>
-            <span ng-if="!msg.text">
-              <i>{{msg}}</i>
-            </span>
-          </p>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <h2>Real-time App with Google Maps</h2>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-info logout" ng-click="logout()">Log out</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7" ng-controller="mapCtrl">
+      <div id="map" style="width:645px; height: 645px;"></div>
+    </div>
+    <div class="col-md-5" ng-controller="chatCtrl">
+      <div class="row">
+        <div class="col-md-12">
+          <uib-tabset active="activeJustified" justified="true">
+            <!-- <uib-tab index="0" heading="General">
+              <div class="row chatroom">
+                <div class="col-md-12">
+                  <div id="chatWrap">
+                    <p ng-repeat="msg in msgs track by $index">
+                      <span ng-if="msg.text">
+                        <strong>{{msg.name}} :</strong>
+                        {{msg.text}}
+                      </span>
+                      <span ng-if="!msg.text">
+                        <i>{{msg}}</i>
+                      </span>
+                    </p>
+                  </div>
+                  <form ng-submit="sendMsg()" action="" onsubmit="return false;">
+                    <input class="form-control ll" type="text" ng-model="msg.text">
+                  </form>
+                </div>
+              </div>
+            </uib-tab>
+            <uib-tab index="1" heading="My channel">
+              <div class="row chatroom">
+                <div class="col-md-12">
+                  <div id="chatWrap">
+                    <p ng-repeat="msg in msgs track by $index">
+                      <span ng-if="msg.text">
+                        <strong>{{msg.name}} :</strong>
+                        {{msg.text}}
+                      </span>
+                      <span ng-if="!msg.text">
+                        <i>{{msg}}</i>
+                      </span>
+                    </p>
+                  </div>
+                  <form ng-submit="sendMsg()" action="" onsubmit="return false;">
+                    <input class="form-control ll" type="text" ng-model="msg.text">
+                  </form>
+                </div>
+              </div>
+            </uib-tab> -->
+
+
+            <uib-tab ng-repeat="chat in chats track by $index" index="$index" heading="{{chat.name}}">
+              <div class="row chatroom">
+                <div class="col-md-12">
+                  <div id="chatWrap">
+                  <p ng-repeat="msg in chat.msgs track by $index">
+                    <span ng-if="msg.text">
+                      <strong>{{msg.user}} :</strong>
+                      {{msg.text}}
+                    </span>
+                    <span ng-if="!msg.text">
+                      <i>{{msg}}</i>
+                    </span>
+                  </p>
+                  </div>
+                  <form ng-submit="sendMsg(chat.room)" action="" onsubmit="return false;">
+                    <input class="form-control ll" type="text" ng-model="msg.text">
+                  </form>
+                </div>
+              </div>
+            </uib-tab>
+
+          </uib-tabset>
         </div>
-        <form ng-submit="sendMsg()" action="" onsubmit="return false;">
-          <input class="form-control ll" type="text" ng-model="msg.text">
-        </form>
       </div>
     </div>
   </div>
+</div>

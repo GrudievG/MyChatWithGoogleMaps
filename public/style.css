@@ -1,5 +1,5 @@
 #chatWrap {
-	height: 600px;
+	height: 555px;
 	overflow: auto;
 }
 
@@ -14,6 +14,10 @@ body {
 
 .ll {
 	margin-bottom: 15px;
+}
+
+.logout {
+	margin-top: 15px;
 }
 
 .login-form {

@@ -1,6 +1,7 @@
-var app = angular.module('myApp', ['chatCtrl', 'mapCtrl', 'ngRoute', 'loginCtrl', 'mainCtrl', 'ngCookies'])
+var app = angular.module('myApp', ['chatCtrl', 'mapCtrl', 'ngRoute', 'loginCtrl', 'mainCtrl', 'ngCookies', 'authService', 'ui.bootstrap'])
 
-	.config(function($routeProvider, $locationProvider) {
+	.config(['$routeProvider', '$locationProvider', 
+		function($routeProvider, $locationProvider) {
 
 		$routeProvider
 		.when('/login', {
@@ -13,5 +14,10 @@ var app = angular.module('myApp', ['chatCtrl', 'mapCtrl', 'ngRoute', 'loginCtrl'
         })
         .otherwise({redirectTo:'/login'});
 
-        // $locationProvider.html5Mode(true);
-	});
+	}])
+	.run(['$rootScope', 'authService',
+		function($rootScope, authService) {
+			$rootScope.$on('$locationChangeStart', function() {
+        		authService.isAuthenticated();
+    		});
+		}]);
